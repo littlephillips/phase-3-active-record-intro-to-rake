@@ -1,40 +1,29 @@
-#to view the list of available rake tasks
+
+task :hello do
+  puts "hello from Rake!"
+end
+
 desc 'outputs hello to the terminal'
 task :hello do
   puts "hello from Rake!"
 end
 
-desc 'outputs a greetings message'
-task :greet do
-  puts "Hello World, from Phillip Kinuthia"
+desc 'outputs hola to the terminal'
+task :hola do
+  puts "hola de Rake!"
 end
-
-#namespace , group or contain 
 
 namespace :greeting do
-  desc 'ouputs hola to the terminal'
-  task :hola do
-    puts "hola de rake"
+  desc 'outputs hello to the terminal'
+    task :hello do
+      puts "hello from Rake!"
+    end
+  
+    desc 'outputs hola to the terminal'
+    task :hola do
+      puts "hola de Rake!"
+    end
   end
-
-
-  desc 'outputs a greetings message'
-  task :greet do
-    puts "Hello World, from Phillip Kinuthia"
-  end
-end
-
-#bundle exec rake
-# rake greeting:hola 
-# rake aborted!
-# Gem::LoadError: You have already activated rake 10.4.2,
-# but your Gemfile requires rake 10.4.0.
-# Prepending `bundle exec` to your command may solve this.
-
-# bundle exec rake greeting:hola
-
-#common Rake Tasks
-  #rake db:migrate
 
   task :environment do 
     require_relative './config/environment.rb'
@@ -54,11 +43,6 @@ namespace :db do
   end
 end
 
-#interacting  with our class and database without having to run our entire program...
-#build a Rake task that will load up Pry console for us
-
-
-#rake console
 desc 'drop into the Pry console'
 task console: :environment do
   Pry.start

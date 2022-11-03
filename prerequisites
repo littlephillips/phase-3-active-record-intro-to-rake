@@ -1,0 +1,7 @@
+Introduce Rake and Rake tasks
+Understand what Rake is used for in our ruby programs
+Learn how to build a basic Rake task
+
+:: why Rake?
+since every program has tasks that must be executed now an then, rake acts as a standard, conventional way to define and execute such tasks using ruby.
+
